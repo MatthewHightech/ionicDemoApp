@@ -24,4 +24,6 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+  people = ['matt', 'kate', 'sue', 'dave']; 
 }

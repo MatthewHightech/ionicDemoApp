@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { PeopleComponent } from './people/people.component'; 
+
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
