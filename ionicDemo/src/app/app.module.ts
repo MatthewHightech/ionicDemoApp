@@ -10,9 +10,10 @@ import { AppComponent } from './app.component';
 import { PeopleComponent } from './people/people.component'; 
 
 import { AppRoutingModule } from './app-routing.module';
+import { PeopleInputComponent } from './people/people-input.component';
 
 @NgModule({
-  declarations: [AppComponent, PeopleComponent],
+  declarations: [AppComponent, PeopleComponent, PeopleInputComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
   providers: [
