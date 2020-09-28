@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class PeopleInputComponent {
-    onAddPeople() {
+    addName() {
         console.log("Created new Person"); 
     }
 }
