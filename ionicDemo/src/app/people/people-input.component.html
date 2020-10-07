@@ -1,3 +1,5 @@
 <ion-label for="name">Name</ion-label>
-<ion-input type="text" id="name">
+<!-- two way binding syntax where you can change the input and the 
+output because they're related to eachother-->
+<ion-input type="text" id="name" [(ngModel)]="enteredPeoplesName">
 <ion-button (click)="addName()">Add Name</ion-button>

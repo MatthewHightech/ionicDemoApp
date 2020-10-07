@@ -25,5 +25,4 @@ export class AppComponent {
     });
   }
 
-  people = ['matt', 'kate', 'sue', 'dave']; 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'; 
+import { Component, EventEmitter, Output } from '@angular/core'; 
 
 @Component({
     selector: 'app-input-people', 
@@ -7,7 +7,16 @@ import { Component } from '@angular/core';
 })
 
 export class PeopleInputComponent {
+    // custom event 
+    @Output() peopleCreate = new EventEmitter<string>(); 
+
+    // when new name is entered it get's temporarily stored here
+    enteredPeoplesName = '';
+
+    // 
     addName() {
-        console.log("Created new Person"); 
+        console.log("Created new Person");
+        // triggers custom event "peopleCreate" with arg enteredPeoplesName
+        this.peopleCreate.emit(this.enteredPeoplesName);
     }
 }

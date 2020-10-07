@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component} from '@angular/core';
+import { PeopleService } from './people.service';
 
 @Component({
     selector: 'app-people', 
@@ -6,6 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 
 export class PeopleComponent {
-   @Input() peopleList: string[];
+    // special binding for taking input from a parent component
+   peopleList: string[];
+
+   constructor(peoService: PeopleService) {
+        this.peopleList = peoService.people; 
+   }
 
 }
