@@ -9,7 +9,7 @@ const routes: Routes = [
     component: PeopleComponent 
   }, 
   {
-    path: 'peopleInput', 
+    path: 'input', 
     component: PeopleInputComponent
   }, 
   {
