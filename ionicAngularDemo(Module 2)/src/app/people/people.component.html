@@ -1,6 +1,7 @@
 <!-- Uses string interpolation and angular syntax to print a div 
 with each element of the peopleList array (imported from the parent class 
 "app component") -->
-<ul>
+<p *ngIf='isFetching'>Loading...</p>
+<ul *ngIf='!isFetching'>
     <li *ngFor="let person of peopleList" (click)="onRemove(person)">{{ person }}</li>
 </ul>

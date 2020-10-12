@@ -9,19 +9,21 @@ import { Subscription } from 'rxjs';
 })
 
 export class PeopleComponent implements OnInit, OnDestroy {
-    // special binding for taking input from a parent component
     peopleList: string[];
-    private peopleListSubscription: Subscription; 
+    private peopleListSubscription: Subscription;
+    isFetching = false;  
 
     constructor(private peoService: PeopleService) {
             
     }
 
-    ngOnInit() {
-        this.peopleList = this.peoService.people; 
+    ngOnInit() { 
         this.peopleListSubscription = this.peoService.peopleChanged.subscribe(newPeopleList => {
-            this.peopleList = newPeopleList; 
+            this.peopleList = newPeopleList;
+            this.isFetching = false; 
         });
+        this.isFetching = true; 
+        this.peoService.fetchPeople(); 
     }
 
     ngOnDestroy() {
