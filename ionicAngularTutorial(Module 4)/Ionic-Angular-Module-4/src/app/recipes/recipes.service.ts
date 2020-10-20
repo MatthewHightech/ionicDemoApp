@@ -1,39 +1,45 @@
 import { Injectable } from '@angular/core';
-import { Recipe } from './recipe.model'; 
+
+import { Recipe } from './recipe.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipesService {
-  private recipes: Recipe[] = [{
-    id: '1', 
-    title: 'pizza', 
-    imageUrl: 'https://storage.googleapis.com/phx2-uat-wordpress-uploads/1/2019/12/Fan-Favourite-640x390.jpg', 
-    ingredients: ['dough', 'cheese', 'pepperoni']
-  }, 
-  {
-    id: '2', 
-    title: 'burger', 
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/285px-RedDot_Burger.jpg', 
-    ingredients: ['buns', 'patty', 'ketchup']
-  }
-]
-  constructor() { }
+  private recipes: Recipe[] = [
+    {
+      id: 'r1',
+      title: 'Schnitzel',
+      imageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Schnitzel.JPG/1024px-Schnitzel.JPG',
+      ingredients: ['French Fries', 'Pork Meat', 'Salad']
+    },
+    {
+      id: 'r2',
+      title: 'Spaghetti',
+      imageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/1024px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
+      ingredients: ['Spaghetti', 'Meat', 'Tomatoes']
+    }
+  ];
+
+  constructor() {}
 
   getAllRecipes() {
-    return [...this.recipes]; 
+    return [...this.recipes];
   }
 
   getRecipe(recipeId: string) {
-    return {...this.recipes.find(recipe => {
-      return recipe.id === recipeId; 
-    })}; 
+    return {
+      ...this.recipes.find(recipe => {
+        return recipe.id === recipeId;
+      })
+    };
   }
 
   deleteRecipe(recipeId: string) {
     this.recipes = this.recipes.filter(recipe => {
-      console.log('deleted' + recipeId); 
-      return recipe.id !== recipeId; 
-    }); 
+      return recipe.id !== recipeId;
+    });
   }
 }
